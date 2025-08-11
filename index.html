@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cubinzz* Store</title>
+<title>Cubinzz Store</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -83,9 +83,10 @@ games.forEach(game => {
         <button class="download-btn">Xem ngay</button>
     `;
 
+    // Xử lý click
     card.querySelector(".download-btn").addEventListener("click", () => {
         if (game.link && game.link !== "#") {
-            window.open(game.link, "_blank"); // mở link thật
+            window.open(game.link, "_blank");
         } else {
             alert(`😂 Lêu lêu! Game "${game.name}" chưa ra mắt, đợi đi nhé!`);
         }
