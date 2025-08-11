@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Game Store</title>
+<title>Cubinzz* Store</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -58,7 +58,7 @@
 </head>
 <body>
 
-<h1>🎮 Game Store 🎯</h1>
+<h1>🎮 Cubinzz Store 🎯</h1>
 <div class="game-list" id="gameList">
     <!-- Game cards sẽ được thêm bằng JavaScript -->
 </div>
@@ -82,13 +82,18 @@ games.forEach(game => {
         <h3>${game.name}</h3>
         <button class="download-btn">Xem ngay</button>
     `;
+
     card.querySelector(".download-btn").addEventListener("click", () => {
-        alert(`😂 Lêu lêu! Game "${game.name}" chưa ra mắt, đợi đi nhé!`);
+        if (game.link && game.link !== "#") {
+            window.open(game.link, "_blank"); // mở link thật
+        } else {
+            alert(`😂 Lêu lêu! Game "${game.name}" chưa ra mắt, đợi đi nhé!`);
+        }
     });
+
     gameList.appendChild(card);
 });
 </script>
 
 </body>
 </html>
-
