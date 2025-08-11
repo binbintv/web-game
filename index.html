@@ -65,11 +65,11 @@
 
 <script>
 const games = [
-    { name: "Game 1", img: "https://i.imgur.com/fkT2g7T.png", link: "https://example.com/game1.zip" },
-    { name: "Game 2", img: "https://i.imgur.com/zPtDk5P.png", link: "https://example.com/game2.zip" },
-    { name: "Game 3", img: "https://i.imgur.com/IU4gW5J.png", link: "https://example.com/game3.zip" },
-    { name: "Game 4", img: "https://i.imgur.com/7yHqzFv.png", link: "https://example.com/game4.zip" },
-    { name: "Game 5", img: "https://i.imgur.com/lGblj7M.png", link: "https://example.com/game5.zip" }
+    { name: "?", img: "https://i.imgur.com/fkT2g7T.png", link: "#" },
+    { name: "??", img: "https://i.imgur.com/zPtDk5P.png", link: "#" },
+    { name: "???", img: "https://i.imgur.com/IU4gW5J.png", link: "#" },
+    { name: "????", img: "https://i.imgur.com/7yHqzFv.png", link: "#" },
+    { name: "?????", img: "https://i.imgur.com/lGblj7M.png", link: "#" }
 ];
 
 const gameList = document.getElementById("gameList");
@@ -83,7 +83,7 @@ games.forEach(game => {
         <button class="download-btn">Xem ngay</button>
     `;
     card.querySelector(".download-btn").addEventListener("click", () => {
-        window.open(game.link, "_blank"); // mở link trong tab mới
+        alert(`😂 Lêu lêu! Game "${game.name}" chưa ra mắt, đợi đi nhé!`);
     });
     gameList.appendChild(card);
 });
