@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Store</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        color: white;
+        padding: 20px;
+        background: #ff4d4d;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .game-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+    .game-card {
+        background: white;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px;
+        width: 220px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        transition: transform 0.2s;
+    }
+    .game-card:hover {
+        transform: scale(1.05);
+    }
+    .game-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .download-btn {
+        background: #ff4d4d;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .download-btn:hover {
+        background: #e60000;
+    }
+</style>
+</head>
+<body>
+
+<h1>🎮 Game Store 🎯</h1>
+<div class="game-list" id="gameList">
+    <!-- Game cards sẽ được thêm bằng JavaScript -->
+</div>
+
+<script>
+const games = [
+    { name: "?", img: "https://i.imgur.com/fkT2g7T.png", link: "#" },
+    { name: "??", img: "https://i.imgur.com/zPtDk5P.png", link: "#" },
+    { name: "???", img: "https://i.imgur.com/IU4gW5J.png", link: "#" },
+    { name: "????", img: "https://i.imgur.com/7yHqzFv.png", link: "#" },
+    { name: "?????", img: "https://i.imgur.com/lGblj7M.png", link: "#" }
+];
+
+const gameList = document.getElementById("gameList");
+
+games.forEach(game => {
+    const card = document.createElement("div");
+    card.className = "game-card";
+    card.innerHTML = `
+        <img src="${game.img}" alt="${game.name}">
+        <h3>${game.name}</h3>
+        <button class="download-btn">Xem ngay</button>
+    `;
+    card.querySelector(".download-btn").addEventListener("click", () => {
+        alert(`😂 Lêu lêu! Game "${game.name}" chưa ra mắt, đợi đi nhé!`);
+    });
+    gameList.appendChild(card);
+});
+</script>
+
+</body>
+</html>
